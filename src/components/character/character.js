@@ -1,13 +1,20 @@
-import React from 'react';
-import UsePersonControls from './movement.js';
-import jumper from '../../images/character.jpg';
+import React, {useEffect} from 'react';
+import Jumper from '../../images/character.jpg';
+import Movement from './movement';
 
-function character(){
-    const { forward, backward, left, right, jump } = UsePersonControls()
+function Character(){
+    useEffect(() => {
+        document.addEventListener('keydown', detectKeyDown, true)
+    }, [])
+
+    const detectKeyDown = (e) => {
+       if(e.key){<Movement direction={e.key}/>}
+    }
+    
     return (
         <div>
-            <img className="jumper" src={jumper} alt="jumper"/>
+            <img className="jumper" src={Jumper} alt="jumper"/>
         </div>
     )
 }
-export default character;
+export default Character;
