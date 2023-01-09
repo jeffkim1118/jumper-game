@@ -1,5 +1,10 @@
+
 .jumper{
-    width: 100px;
-    height: 100px;
-    position: relative;
+    position: absolute;
+    background-color: blue;
+}
+
+.jumper-img{
+    width: 70px;
+    height: 70px;
 }

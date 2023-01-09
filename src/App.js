@@ -1,10 +1,10 @@
 import './App.css';
-import Character from './components/character/character';
+import Player from './components/character/player';
 
 function App() {
   return (
     <div className="App">
-      <Character />
+      <Player />
     </div>
   );
 }
