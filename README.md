@@ -21,13 +21,10 @@ It is a 2D platform jump game created with React. The goal of the game is get th
 # Installation
 
 Make sure you have all the necessary files using:
-```
-  npm install
-```
+```npm install```
 
 Start the program by typing in your console:
-
-### `npm start`
+```npm start```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
