@@ -10,25 +10,25 @@ class Player extends React.Component{
     
     moveRight = () => {
         this.setState({
-            left: parseInt(this.state.left) + 5
+            left: parseInt(this.state.left) + 15
         });
     }
 
      moveLeft = () => {
         this.setState({
-            left: parseInt(this.state.left) - 5
+            left: parseInt(this.state.left) - 15
         });  
     }
 
      makeJump = () => {
         this.setState({
-            top: parseInt(this.state.top) - 5
+            top: parseInt(this.state.top) - 50
         })        
     }
 
     goDown = () => {
         this.setState({
-            top: parseInt(this.state.top) + 5
+            top: parseInt(this.state.top) + 20
         })
     }
 
