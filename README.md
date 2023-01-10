@@ -1,6 +1,7 @@
 # Jumper Game
 
 ## Idea
+![image](https://user-images.githubusercontent.com/64029918/211657134-4c33771c-deed-44cc-9eca-f65a0836ee39.png)
 
 It is a 2D platform jump game created with React. The goal of the game is get the most points by getting higher. The point can be gathered by simply jumping onto a platform safely. There will be many obstacles as the player goes up the map. Such as birds, planes, and any other objects. Players can use arrow keys on their keyboard and their spacebars to move the character.
 
