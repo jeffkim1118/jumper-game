@@ -1,19 +1,31 @@
 # Jumper Game
 
 ## Idea
-![image](https://user-images.githubusercontent.com/64029918/211657134-4c33771c-deed-44cc-9eca-f65a0836ee39.png)
 
 It is a 2D platform jump game created with React. The goal of the game is get the most points by getting higher. The point can be gathered by simply jumping onto a platform safely. There will be many obstacles as the player goes up the map. Such as birds, planes, and any other objects. Players can use arrow keys on their keyboard and their spacebars to move the character.
 
+## Current State
 
+![image](https://user-images.githubusercontent.com/64029918/211657134-4c33771c-deed-44cc-9eca-f65a0836ee39.png)
 
-# Getting Started with Create React App
+1. Currently it has initial background image, character, obstacle, and platform.
+2. Player can move around using arrow key and space key on keyboard.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Upcoming features
 
-## Available Scripts
+1. Character collision and physics (Gravity)
+2. Moving obstacles. ( Example. Bird and plane will constantly move left and right to interrupt player to go up.
+3. Score keeper ( Count up to 100 )
+4. Checkpoint feature...? (Not sure about this one yet...)
 
-In the project directory, you can run:
+# Installation
+
+Make sure you have all the necessary files using:
+```
+  npm install
+```
+
+Start the program by typing in your console:
 
 ### `npm start`
 
