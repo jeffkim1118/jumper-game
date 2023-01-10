@@ -4,7 +4,7 @@ import Jumper from '../../images/character.jpg';
 class Player extends React.Component{
     constructor(props){
         super(props)
-        this.state = { left:500, top:500};
+        this.state = { left:500, top:530};
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
     
@@ -22,7 +22,7 @@ class Player extends React.Component{
 
      makeJump = () => {
         this.setState({
-            top: parseInt(this.state.top) - 50
+            top: parseInt(this.state.top) - 70
         })        
     }
 
