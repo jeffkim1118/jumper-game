@@ -32,6 +32,12 @@ class Player extends React.Component{
         })
     }
 
+    gravity(){
+        for(let i = 0; i < this.state.top.length; i++){
+            this.state.top += -this.state.top * 0.1;
+        }
+    }
+
     handleKeyPress(e){
         console.log(e.which)
         switch(e.which){
@@ -51,6 +57,7 @@ class Player extends React.Component{
                 this.goDown();
                 break;
             default:
+                this.gravity();
         }
     }
 
