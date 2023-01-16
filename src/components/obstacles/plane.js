@@ -4,7 +4,7 @@ import plane from "../../images/plane.jpg";
 class Plane extends React.Component{
     constructor(props){
         super(props);
-        this.state = {left:300, top:100}
+        this.state = {left:300, top:100, width:75, height:75}
     }
 
     render(){

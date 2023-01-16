@@ -33,6 +33,8 @@ class Player extends React.Component{
     }
 
     gravity(){
+        let gravity = 0.2;
+        let friction = 0.98;
         for(let i = 0; i < this.state.top.length; i++){
             this.state.top += -this.state.top * 0.1;
         }
