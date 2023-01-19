@@ -8,6 +8,8 @@ class Plane extends React.Component{
     }
 
     render(){
+        let hitbox = this.state.width * this.state.height;
+        console.log(hitbox)
         return (
             <div className="plane" style={{left:this.state.left+'px', top:this.state.top+'px'}}>
                 <img className="plane-img" src={plane} alt="plane"></img>

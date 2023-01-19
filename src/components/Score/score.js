@@ -5,7 +5,7 @@ export default function Score() {
     const [currentScore, setCurrentScore] = useState(0)
 
     return(
-        <div>
+        <div className="score">
             <h1>{currentScore}</h1>
         </div>
     )

@@ -10,13 +10,13 @@ class Player extends React.Component{
     
     moveRight = () => {
         this.setState({
-            left: parseInt(this.state.left) + 15
+            left: parseInt(this.state.left) + 15.25
         });
     }
 
      moveLeft = () => {
         this.setState({
-            left: parseInt(this.state.left) - 15
+            left: parseInt(this.state.left) - 15.25
         });  
     }
 
