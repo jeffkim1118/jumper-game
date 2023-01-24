@@ -4,7 +4,7 @@ import Jumper from '../../images/character.jpg';
 class Player extends React.Component{
     constructor(props){
         super(props)
-        this.state = { left:500, top:530};
+        this.state = { left:530, top:530};
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
     
@@ -33,15 +33,19 @@ class Player extends React.Component{
     }
 
     gravity(){
-        let gravity = 0.2;
-        let friction = 0.98;
-        for(let i = 0; i < this.state.top.length; i++){
-            this.state.top += -this.state.top * 0.1;
+        // let gravity = 0.2;
+        // let friction = 0.98;
+        let gravity
+        if(this.state.top !== 530 || this.state.top < 530){
+            gravity = setInterval(() => {
+                this.setState({top: parseInt(this.state.top) + 10})
+            }, 100);
+        }else if(this.state.top > 530){
+            clearInterval(gravity)
         }
     }
 
     handleKeyPress(e){
-        console.log(e.which)
         switch(e.which){
             case 39:
                 this.moveRight();
@@ -65,10 +69,23 @@ class Player extends React.Component{
 
     componentDidMount(){
         document.addEventListener("keydown", this.handleKeyPress)
+
+        // if(this.state.top <= 530){
+        //     setInterval(() => {
+        //         this.setState({top: parseInt(this.state.top) + 10})
+        //     }, 100);
+        // }
+        // do{
+        //     setInterval(() => {
+        //         this.setState({top: parseInt(this.state.top) + 10})
+        //     }, 100);
+        // }while(this.state.top === 530)
+        this.gravity()
+        
     }
 
     render(){
-        
+        console.log(this.state.top)
         return(
             <div className="jumper" style={{top:this.state.top+"px", left:this.state.left+"px"}}>
                 <img className="jumper-img" src={Jumper} alt="jumper"/>

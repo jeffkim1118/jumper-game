@@ -8,28 +8,15 @@ class Bird extends React.Component{
     }
 
     componentDidMount(){
-        if(this.state.left >= 800){
-            setInterval(() => {
-                this.setState({left: parseInt(this.state.left) - 20})
-                console.log(this.state.left)
-            }, 1000);
-        }else if (this.state.left <= 200){
-            setInterval(() => {
-                this.setState({left: parseInt(this.state.left) + 20})
-            }, 1000);
-        }
-
-        
-
-            // setInterval(() => {
-            //     if(this.state.left > 1000){
-            //         this.setState({left: parseInt(this.state.left) - 20})
-            //     }else if(this.state.left < 1000){
-            //         this.setState({left: parseInt(this.state.left) + 20})
-            //     }
-                
-            // }, 1000);
-        
+        // if(this.state.left >= 800){
+        //     setInterval(() => {
+        //         this.setState({left: parseInt(this.state.left) - 20})
+        //     }, 1000);
+        // }else if (this.state.left <= 200){
+        //     setInterval(() => {
+        //         this.setState({left: parseInt(this.state.left) + 20})
+        //     }, 1000);
+        // }
         
     }
 
