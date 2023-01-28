@@ -1,23 +1,89 @@
 import React from 'react';
 import bird from '../../images/bird.jpg';
 
+let birdInterval;
+
 class Bird extends React.Component{
     constructor(props){
         super(props);
-        this.state={left: 800, top: 300, width:50, height:50};
+        this.state={left: props.left, top: props.top, width:50, height:50, changeAmount: props.changeAmount};
     }
 
     componentDidMount(){
-        // if(this.state.left >= 800){
-        //     setInterval(() => {
-        //         this.setState({left: parseInt(this.state.left) - 20})
+        if (this.state.left > 200) {
+            const birdInterval = setInterval(() => {
+                this.setState({left: parseInt(this.state.left) + this.state.changeAmount }, () => {
+                    if (this.state.left < 200) {
+                        this.props.handleBird(this.state.left);
+                        // clearInterval(birdInterval);
+                    }else if(this.state.left > 800){
+                        this.props.handleBird(this.state.left);
+                    }
+                })
+            }, 250);
+        }
+
+        if (this.state.left <= 200) {
+            const birdInterval = setInterval(() => {
+                this.setState({left: parseInt(this.state.left) +20 }, () => {
+                    if (this.state.left > 800) {
+                        clearInterval(birdInterval);
+                    }
+                })
+            }, 1000);
+        }
+
+        // if (this.state.left < 200) {
+        //     const birdInterval = setInterval(() => {
+        //         this.setState({left: parseInt(this.state.left) + 20}, () => {
+        //             if (this.state.left > 800) {
+        //                 clearInterval(birdInterval);
+        //             }
+        //         })
         //     }, 1000);
+        // }
+           
+
+        
         // }else if (this.state.left <= 200){
         //     setInterval(() => {
         //         this.setState({left: parseInt(this.state.left) + 20})
         //     }, 1000);
         // }
         
+        
+
+        // function moveLeftAndRight(leftValue){
+        //     console.log(leftValue)
+        //     if(this.state.left >= 800){
+        //         const goLeft = setInterval(() => {
+        //             this.setState({left: parseInt(this.state.left) - 20})
+        //         }, 1000)
+        //         if(this.state.left <= 200){
+        //             clearInterval(goLeft);
+        //             moveLeftAndRight(this.state.left)
+        //         }
+        //     }
+        // }
+        // moveLeftAndRight()
+    }
+
+    componentDidUpdate() {
+        
+    }
+
+    componentDidUpdate() {
+
+    }
+
+    componentWillReceiveProps(ownProps) {
+
+        if (this.state.changeAmount !== ownProps.changeAmount) {
+            this.setState({
+                changeAmount: ownProps.changeAmount,
+            });
+        }
+
     }
 
     render(){
