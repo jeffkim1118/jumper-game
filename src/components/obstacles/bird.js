@@ -33,51 +33,9 @@ class Bird extends React.Component{
             }, 1000);
         }
 
-        // if (this.state.left < 200) {
-        //     const birdInterval = setInterval(() => {
-        //         this.setState({left: parseInt(this.state.left) + 20}, () => {
-        //             if (this.state.left > 800) {
-        //                 clearInterval(birdInterval);
-        //             }
-        //         })
-        //     }, 1000);
-        // }
-           
-
-        
-        // }else if (this.state.left <= 200){
-        //     setInterval(() => {
-        //         this.setState({left: parseInt(this.state.left) + 20})
-        //     }, 1000);
-        // }
-        
-        
-
-        // function moveLeftAndRight(leftValue){
-        //     console.log(leftValue)
-        //     if(this.state.left >= 800){
-        //         const goLeft = setInterval(() => {
-        //             this.setState({left: parseInt(this.state.left) - 20})
-        //         }, 1000)
-        //         if(this.state.left <= 200){
-        //             clearInterval(goLeft);
-        //             moveLeftAndRight(this.state.left)
-        //         }
-        //     }
-        // }
-        // moveLeftAndRight()
-    }
-
-    componentDidUpdate() {
-        
-    }
-
-    componentDidUpdate() {
-
     }
 
     componentWillReceiveProps(ownProps) {
-
         if (this.state.changeAmount !== ownProps.changeAmount) {
             this.setState({
                 changeAmount: ownProps.changeAmount,

@@ -7,18 +7,9 @@ import Platform from './components/platform/platform';
 import Score from './components/Score/score';
 
 function App() {
-  
-  // const heights = [400, 600, 800, 1000]
-  const lefts = [800, 700, 600, 500]
-
   const [birdLeft, setBirdLeft] = useState(800);
   const [changeAmount, setChangeAmount] = useState(-5.5);
-  
-  
-  // const platformPosition = {
-  //   heights:[100,200,300,400], 
-  //   lefts:[400,300,500,600]
-  // }
+
   
   const handleBird = (birdLeftCoordinate) => {
 

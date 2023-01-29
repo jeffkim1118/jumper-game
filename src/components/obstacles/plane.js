@@ -8,16 +8,7 @@ class Plane extends React.Component{
     }
 
     componentDidMount(){
-        // if(this.state.left >= 300){
-        //     setInterval(() => {
-        //         this.setState({left: parseInt(this.state.left) - 20})
-        //     }, 1000);
-        // }else if (this.state.left <= 0){
-        //     setInterval(() => {
-        //         this.setState({left: parseInt(this.state.left) + 20})
-        //     }, 1000);
-        // }
-           
+    
     }
 
     render(){
