@@ -23,15 +23,15 @@ class Bird extends React.Component{
             }, 250);
         }
 
-        if (this.state.left <= 200) {
-            const birdInterval = setInterval(() => {
-                this.setState({left: parseInt(this.state.left) +20 }, () => {
-                    if (this.state.left > 800) {
-                        clearInterval(birdInterval);
-                    }
-                })
-            }, 1000);
-        }
+        // if (this.state.left <= 200) {
+        //     const birdInterval = setInterval(() => {
+        //         this.setState({left: parseInt(this.state.left) +20 }, () => {
+        //             if (this.state.left > 800) {
+        //                 clearInterval(birdInterval);
+        //             }
+        //         })
+        //     }, 1000);
+        // }
 
     }
 
