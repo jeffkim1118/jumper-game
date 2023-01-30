@@ -7,10 +7,6 @@ class Plane extends React.Component{
         this.state = {left:300, top:100, width:75, height:75}
     }
 
-    componentDidMount(){
-    
-    }
-
     render(){
         let hitbox = this.state.width * this.state.height;
         console.log(hitbox)

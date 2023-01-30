@@ -42,12 +42,12 @@ body{
     height: 100px;
     animation-name: fly;
     animation-duration: 5.5s;
-    animation-fill-mode:both;
+    /* animation-fill-mode:both; */
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
 @keyframes fly{
-    from{ transform: translate(-200px);}
+    from{ transform: translate(-300px);}
     to{ transform: translate(800px);}
 }
