@@ -5,6 +5,8 @@ html{
 body{
     background-image: url('./images/background.png');
     background-repeat: no-repeat;
+    background-size: cover;
+    max-height: max-content;
 }
 
 
