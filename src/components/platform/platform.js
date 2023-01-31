@@ -3,7 +3,7 @@ import React from "react";
 class Platform extends React.Component{
     constructor(props){
         super(props);
-        this.state = {left: 400, top: 500}
+        this.state = {left: 400, top: props.height}
     }
     
     getPosition(){

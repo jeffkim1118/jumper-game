@@ -10,13 +10,13 @@ class Bird extends React.Component{
     }
 
     componentDidMount(){
-        if (this.state.left > 200) {
+        if (this.state.left > 300) {
             const birdInterval = setInterval(() => {
                 this.setState({left: parseInt(this.state.left) + this.state.changeAmount }, () => {
-                    if (this.state.left < 200) {
+                    if (this.state.left < 300) {
                         this.props.handleBird(this.state.left);
                         // clearInterval(birdInterval);
-                    }else if(this.state.left > 800){
+                    }else if(this.state.left > 1000){
                         this.props.handleBird(this.state.left);
                     }
                 })

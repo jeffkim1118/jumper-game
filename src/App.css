@@ -7,6 +7,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     max-height: max-content;
+    max-width: max-content;
 }
 
 
@@ -43,13 +44,13 @@ body{
     width: 100px;
     height: 100px;
     animation-name: fly;
-    animation-duration: 5.5s;
-    /* animation-fill-mode:both; */
+    animation-duration: 4s;
+    animation-fill-mode:both;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
 @keyframes fly{
-    from{ transform: translate(-300px);}
-    to{ transform: translate(800px);}
+    from{ transform: translate(200px);}
+    to{ transform: translate(1000px);}
 }

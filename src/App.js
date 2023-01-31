@@ -7,13 +7,17 @@ import Platform from './components/platform/platform';
 import Score from './components/Score/score';
 
 function App() {
-  const [birdLeft, setBirdLeft] = useState(800);
+  const [birdLeft, setBirdLeft] = useState(1000);
   const [changeAmount, setChangeAmount] = useState(-5.5);
 
+  // const heights = [900, 800, 700, 600]
+  // const lefts = [400, 500, 300, 900]
   
-  const handleBird = (birdLeftCoordinate) => {
+  const platformPosition = [{900:400},{800:500},{700:300},{600:900}];
+  Object.keys(platformPosition)
 
-    if (birdLeftCoordinate < 200) {
+  const handleBird = (birdLeftCoordinate) => {
+    if (birdLeftCoordinate < 300) {
       setChangeAmount(+5.5);
     } else {
       setChangeAmount(-5.5);
@@ -21,14 +25,16 @@ function App() {
     }
   }
  
-  // console.log(platformPosition.heights.map(height => console.log(height)))
+ 
 
   return (
     <div className="App">
       <Player />
       <Bird left={birdLeft} top={300} handleBird={handleBird} changeAmount={changeAmount} />
       <Plane />
-      <Platform />
+      {/* {heights.map((height) => {return (
+        <Platform height = {height}/>
+      )})} */}
       <Score />
     </div>
   );
