@@ -9,6 +9,7 @@ import Score from './components/Score/score';
 function App() {
   const [birdLeft, setBirdLeft] = useState(1000);
   const [changeAmount, setChangeAmount] = useState(-5.5);
+  const [currentPlatPosition, setCurrentPlatPosition] = useState()
 
   // const heights = [900, 800, 700, 600]
   // const lefts = [400, 500, 300, 900]
@@ -24,7 +25,15 @@ function App() {
       console.log('HERE');
     }
   }
- 
+
+  const handlePlatform = () => {
+    platformPosition.map((position) => {
+      return (
+        <Platform top={Object.keys(position)} left={Object.values(position)}/>
+      )
+    })
+  }
+  handlePlatform()
  
 
   return (
@@ -32,9 +41,7 @@ function App() {
       <Player />
       <Bird left={birdLeft} top={300} handleBird={handleBird} changeAmount={changeAmount} />
       <Plane />
-      {/* {heights.map((height) => {return (
-        <Platform height = {height}/>
-      )})} */}
+      {handlePlatform()}
       <Score />
     </div>
   );
