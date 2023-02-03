@@ -124,12 +124,7 @@ class Player extends React.Component{
     }
 
     componentDidUpdate(){
-        // if(this.state.top > 900){
-        //     console.log('here')
-        //     clearInterval(gravity)
-        // }else if(this.state.top < 900){
-        //     this.gravity();
-        // }
+        
     }
     render(){
         console.log(this.state.top)
