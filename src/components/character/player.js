@@ -11,15 +11,21 @@ class Player extends React.Component{
     }
     
     moveRight = () => {
-        this.setState({
-            left: parseInt(this.state.left) + 50.25
-        });
+        if(this.state.left < 1700){
+            this.setState({
+                left: parseInt(this.state.left) + 50.25
+            });
+        }
+        
     }
 
      moveLeft = () => {
-        this.setState({
-            left: parseInt(this.state.left) - 50.25
-        });  
+        if(this.state.left > 50){
+            this.setState({
+                left: parseInt(this.state.left) - 50.25
+            });  
+        }
+       
     }
 
      makeJump = () => {
@@ -29,9 +35,12 @@ class Player extends React.Component{
     }
 
     goDown = () => {
-        this.setState({
-            top: parseInt(this.state.top) + 20
-        })
+        if(this.state.top < 890){
+            this.setState({
+                top: parseInt(this.state.top) + 20
+            })
+        }
+        
     }
 
     // coordX(){
@@ -127,8 +136,8 @@ class Player extends React.Component{
         
     }
     render(){
-        console.log(this.state.top)
-        console.log(this.state.keyCodes);
+        // console.log(this.state.top)
+        // console.log(this.state.keyCodes);
         return(
             <div className="jumper" style={{top:this.state.top+"px", left:this.state.left+"px"}}>
                 <img className="jumper-img" src={Jumper} alt="jumper"/>

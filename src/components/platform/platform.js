@@ -9,6 +9,7 @@ class Platform extends React.Component{
     
     
     render(){
+        
         return(
             <div>
                 <div className="platform" style={{top:this.state.top+"px", left:this.state.left+"px"}}></div>           

@@ -9,7 +9,6 @@ import Score from './components/Score/score';
 function App() {
   const [birdLeft, setBirdLeft] = useState(1000);
   const [changeAmount, setChangeAmount] = useState(-5.5);
-  const [currentPlatPosition, setCurrentPlatPosition] = useState()
 
   // const heights = [900, 800, 700, 600]
   // const lefts = [400, 500, 300, 900]
@@ -22,7 +21,6 @@ function App() {
       setChangeAmount(+5.5);
     } else {
       setChangeAmount(-5.5);
-      console.log('HERE');
     }
   }
 
