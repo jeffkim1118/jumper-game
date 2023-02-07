@@ -6,12 +6,12 @@ let gravity;
 class Player extends React.Component{
     constructor(props){
         super(props)
-        this.state = { left:930, top:890, keyCodes: []};
+        this.state = { left:930, top:890, keyCodes: [], dropSpeed:props.dropSpeed};
         this.handleKeyPress = this.handleKeyPress.bind(this);
     }
     
     moveRight = () => {
-        if(this.state.left < 1700){
+        if(this.state.left < 1800){
             this.setState({
                 left: parseInt(this.state.left) + 50.25
             });
@@ -57,11 +57,18 @@ class Player extends React.Component{
         // let gravity = 0.2;
         // let friction = 0.98;
         // console.log(this.state.top)
-        // if(this.state.top < 890){
-        //     gravity = setInterval(() => {
-        //         this.setState({top: parseInt(this.state.top) + 10})
-        //     }, 100);
-        // }
+        if(this.state.top < 890){
+            gravity = setInterval(() => { 
+                this.setState({top: parseInt(this.state.top) + this.state.dropSpeed}, () => {
+                    if(this.state.top > 890){
+                        this.props.handleGravity(this.state.top)
+                        clearInterval(gravity);
+                    }else if(this.state.top < 890){
+                        this.props.handleGravity(this.state.top)
+                    }
+                })
+            }, 100);
+        }
     }
 
     handleKeyPress(e){
@@ -118,25 +125,22 @@ class Player extends React.Component{
     }
 
     componentDidMount(){
-        document.addEventListener("keydown", this.handleKeyPress)
+        document.addEventListener("keydown", this.handleKeyPress)    
+    }
 
-        // if(this.state.top <= 530){
-        //     setInterval(() => {
-        //         this.setState({top: parseInt(this.state.top) + 10})
-        //     }, 100);
-        // }
-        // do{
-        //     setInterval(() => {
-        //         this.setState({top: parseInt(this.state.top) + 10})
-        //     }, 100);
-        // }while(this.state.top === 530)
+    componentWillReceiveProps(ownProps) {
+        if (this.state.dropSpeed !== ownProps.dropSpeed) {
+            this.setState({
+                dropSpeed: ownProps.dropSpeed,
+            });
+        }
     }
 
     componentDidUpdate(){
-        
+       
     }
     render(){
-        // console.log(this.state.top)
+        console.log(this.state.top)
         // console.log(this.state.keyCodes);
         return(
             <div className="jumper" style={{top:this.state.top+"px", left:this.state.left+"px"}}>

@@ -9,6 +9,7 @@ import Score from './components/Score/score';
 function App() {
   const [birdLeft, setBirdLeft] = useState(1000);
   const [changeAmount, setChangeAmount] = useState(-5.5);
+  const [dropSpeed, setDropSpeed] = useState(5)
 
   // const heights = [900, 800, 700, 600]
   // const lefts = [400, 500, 300, 900]
@@ -24,6 +25,15 @@ function App() {
     }
   }
 
+  const handleGravity = (playerHeight) => {
+    console.log("here")
+      if(playerHeight > 890){
+        setDropSpeed(0)
+      }if(playerHeight < 890){
+        setDropSpeed(+5)
+      }
+  }
+
   const handlePlatform = () => {
     platformPosition.map((position) => {
       return (
@@ -36,7 +46,7 @@ function App() {
 
   return (
     <div className="App">
-      <Player />
+      <Player handleGravity={handleGravity} dropSpeed={dropSpeed} />
       <Bird left={birdLeft} top={300} handleBird={handleBird} changeAmount={changeAmount} />
       <Plane />
       {handlePlatform()}
